@@ -39,5 +39,6 @@ yarn next start (启动前端，-p可以指定端口，默认3000)
 ### HOW TO RUN
 
 ```
-
+pip3 install -r requirement.txt
+python3 manage.py runserver
 ```

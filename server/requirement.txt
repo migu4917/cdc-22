@@ -1,0 +1,8 @@
+django
+djangorestframework
+django-cors-headers
+django-werkzeug-debugger-runserver
+django-extensions
+dill
+pymongo
+py2neo
