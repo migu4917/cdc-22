@@ -26,7 +26,7 @@ const MenuItem = [
   {
     title: "病例信息",
     icon: <FormOutlined />,
-    url: '/'
+    url: '/patients'
   },
   {
     title: "流调分析",
@@ -39,9 +39,9 @@ const MenuItem = [
   //   url: '/patientAnalyze'
   // },
   {
-    title:"传播分析",
-    icon:<NodeIndexOutlined />,
-    url:'/analyse'
+    title: "传播分析",
+    icon: <NodeIndexOutlined />,
+    url: '/analyse'
   },
   {
     title: "疫情对比",
@@ -64,7 +64,7 @@ export default function KashHeader() {
   const router = useRouter()
   return (
     <div className={sty.Header}>
-      <div className={sty.Icon}>数字化智慧流调系统</div>
+      <div className={sty.Icon} onClick={() => router.push('/home')}>数字化智慧流调系统</div>
       <div className={sty.Nav}>
         <div className={sty.Menu}>
           {MenuItem.map((e) => (
