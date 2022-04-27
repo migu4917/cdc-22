@@ -20,13 +20,16 @@ from pathlib import Path
 import os
 # Create your views here.
 
-neo4j_path = "http://neo4j:7474/"
+# MongoDB
 mongo_path = pymongo.MongoClient(
-    "mongodb://%s:%s@my-mongo:27017" % ("admin", "123456"))
+    "mongodb://%s:%s@localhost:27017" % ("admin", "123456"))
 db = mongo_path["surveys"]
 col = db["production"] #患者表
 col_contacts = db["contacts"] #密接者表
 col_epidemic = db["epidemic"] #疫情表
+
+# Neo4j
+neo4j_path = "http://localhost:7474/"
 graph = Graph(neo4j_path, user="neo4j", password="123456")
 node_matcher = NodeMatcher(graph)
 rel_matcher = RelationshipMatcher(graph)
@@ -853,6 +856,7 @@ def queryRelatedInfo(request):
         response["Access-Control-Allow-Headers"] = "*"
         return response
 
+# deprecated
 @api_view(["POST"])
 def text2Info(request):
     text = request.data["text"]
