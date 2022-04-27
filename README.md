@@ -1,4 +1,5 @@
 # kash_visualize
+
 流调可视化
 
 ## 前端
@@ -11,7 +12,6 @@
 - echart
 - redux
 
-
 ### HOW TO BUILD
 
 ```
@@ -22,6 +22,7 @@ yarn next start (启动前端，-p可以指定端口，默认3000)
 ```
 
 可能碰到的问题
+
 > ./node_modules/@antv/g6-pc/es/graph/controller/layout.js
 > Attempted import error: 'LayoutWorker' is not exported from '../../layout/worker/layout.worker'.
 
@@ -40,5 +41,5 @@ yarn next start (启动前端，-p可以指定端口，默认3000)
 
 ```
 pip3 install -r requirement.txt
-python3 manage.py runserver
+python3 manage.py runserver <ip>:<port>
 ```
