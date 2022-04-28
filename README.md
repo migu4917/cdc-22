@@ -40,6 +40,30 @@ yarn next start (启动前端，-p可以指定端口，默认3000)
 ### HOW TO RUN
 
 ```
-pip3 install -r requirement.txt
+cd server
+pip3 install -r requirements.txt
 python3 manage.py runserver <ip>:<port>
+```
+
+### mongoDB创建用户
+
+```
+# ~ mongodb
+// 进入mongodb的shell里面
+> db.createUser({user: "admin",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]})
+```
+
+
+### 后端单元测试方法
+
+**如何添加**单元测试
+
+进入tests目录下，创建一个名为`test_<case_name>.py`的文件，仿照其他文件即可
+
+
+**测试方法**
+
+```
+cd server/
+python3 manage.py runserver test
 ```
