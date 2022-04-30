@@ -45,6 +45,19 @@ pip3 install -r requirements.txt
 python3 manage.py runserver <ip>:<port>
 ```
 
+**Django创建超级用户**
+
+```
+python3 manage.py createsuperuser --username=admin --email=<xxx>
+```
+
+**Django创建普通用户**
+
+```
+python3 manage.py shell
+// 然后就是python的常规操作了，import django的User这个模块，具体可以百度就好了
+```
+
 ### mongoDB创建用户
 
 ```

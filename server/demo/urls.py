@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .api import query, route, upload, related
+from .api import query, route, upload, related, login
 
 app_name = "server"
 urlpatterns = [
@@ -50,6 +50,8 @@ urlpatterns = [
     path("api/getAllPlace", views.getAllPlace, name="getAllPlace"),
 
     path("api/initData", views.initData, name="initData"),
+
+    path("api/login", login.login, name="login"),
 
     # path("api/text2Info", views.text2Info),
     # path("api/download", views.download_template),

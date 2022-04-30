@@ -1,26 +1,24 @@
-import { Form, Input, Button, Checkbox, message, Alert } from 'antd';
+import { Form, Input, Button, Checkbox, message, FormInstance } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/router';
+import Axios from "axios";
+import Constant from '../../../lib/constant'
+import React from 'react';
 
 const NormalLoginForm = (props) => {
     const router = useRouter();
-    const onFinish = values => {
-        fetch("./user.json", {
-            method: "GET",
-        }).then(e => e.json())
-            .then(e => {
-                let loginFlag = false;
-                e.data.forEach((value) => {
-                    if (value.name && value.name == values.name &&
-                        value.password && value.password == values.password) {
-                        loginFlag = true;
-                        router.push("/home")
-                    }
-                })
-                if (!loginFlag) {
-                    message.error("请输入正确的账号密码");
-                }
-            })
+
+    const onFinish = (value) => {
+        Axios.post(`${Constant.apihost}/login`, {
+            username: value.name,
+            password: value.password,
+        }).then(e => {
+            console.log(e)
+            router.push("/home")
+        }).catch(e => {
+            console.log(e)
+            message.error("请输入正确的账号密码")
+        })
     };
 
     return (
